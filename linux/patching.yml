@@ -1,6 +1,6 @@
 ---
 - name: Linux server patching
-  hosts: "{{ _hosts | default(omit) }}"
+  hosts: "{{ vm_name }}"
   become: true
   vars:
     report_server: node1
