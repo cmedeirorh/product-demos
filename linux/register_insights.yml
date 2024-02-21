@@ -1,6 +1,6 @@
 ---
 - name: Register instance with subscription mangler
-  hosts: "{{ _hosts | default(omit)  }}"
+  hosts: "{{ vm_name  }}"
   become: true
 
   tasks:
