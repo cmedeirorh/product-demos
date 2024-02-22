@@ -1,6 +1,6 @@
 ---
 - name: Windows updates
-  hosts: "{{ _hosts | default('os_windows') }}"
+  hosts: "{{ vm_name }}"
   vars:
     report_server: win1
 
