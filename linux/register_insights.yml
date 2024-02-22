@@ -61,6 +61,7 @@
         state: present
         activationkey: "{{ activation_key }}"
         org_id: "{{ org_id }}"
+        force_register: true
 
     - name: Configure Red Hat insights
       ansible.builtin.import_role:
