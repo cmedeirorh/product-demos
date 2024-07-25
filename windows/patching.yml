@@ -18,10 +18,8 @@
             name: "{{ item }}"
           loop:
             - demo.patching.report_server
-            - demo.patching.report_linux
-            - demo.patching.report_linux_patching
-            #- demo.patching.report_windows
-            #- demo.patching.report_windows_patching            
+            - demo.patching.report_windows
+            - demo.patching.report_windows_patching            
 
         - name: Update landing page
           ansible.builtin.include_role:
