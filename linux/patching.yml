@@ -3,7 +3,7 @@
   hosts: "{{ vm_name }}"
   become: true
   vars:
-    report_server: node1
+    report_server: reports
 
   tasks:
     # Install yum-utils if it's not there
