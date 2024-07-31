@@ -22,12 +22,6 @@
 - name: Display link to Patch report
   ansible.builtin.debug:
     msg: "Please go to http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
-
-- name: Create report for ServiceNow
-  delegate_to: localhost
-  ansible.builtin.template:
-    src: report.j2
-    dest: "/tmp/{{ inventory_hostname }}-windowspatch.html"
   
 - name: Create a ServiceNow ticket
   delegate_to: localhost
@@ -43,4 +37,4 @@
     short_description: "System Updated: {{ inventory_hostname }}"
     description: "Please go to http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
     attachments:
-      - path: "/tmp/{{ inventory_hostname }}-windowspatch.html"
+      - path: "http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
