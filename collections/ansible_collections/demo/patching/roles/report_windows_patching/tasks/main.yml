@@ -24,6 +24,7 @@
     msg: "Please go to http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
 
 - name: Create a ServiceNow ticket
+  delegate_to: localhost
   servicenow.itsm.incident:
     instance:
         host: "{{ sn_instance }}"
