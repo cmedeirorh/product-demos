@@ -22,25 +22,3 @@
 - name: Display link to Patch report
   ansible.builtin.debug:
     msg: "Please go to http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
-    
-- name: Download Patch Report
-  delegate_to: localhost
-  ansible.builtin.get_url:
-    url: http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html
-    dest: /tmp/windowspatch.html
-    
-- name: Create a ServiceNow ticket
-  delegate_to: localhost
-  servicenow.itsm.incident:
-    instance:
-        host: "{{ sn_instance }}"
-        username: "{{ sn_username }}"
-        password: "{{ sn_password }}"
-    state: new
-    caller: "ansible"
-    impact: medium
-    urgency: medium
-    short_description: "System Updated: {{ inventory_hostname }}"
-    description: "Full report: http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
-    attachments:
-      - path: "/tmp/windowspatch.html"
