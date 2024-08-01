@@ -19,6 +19,6 @@
         impact: medium
         urgency: medium
         short_description: "System Updated: {{ vm_name }}"
-        description: "Full report: 'https://{{ ansible-controller }}/#/jobs/workflow/{{ awx_workflow_job_id }}/output'" 
+        description: "Full report: 'https://{{ controller_url }}/#/jobs/workflow/{{ awx_workflow_job_id }}/output'" 
         attachments:
           - path: "/tmp/windowspatch.html"        
