@@ -1,0 +1,24 @@
+---
+- name: Windows updates
+  hosts: localhost
+
+  tasks:
+    - name: Download Patch Report
+      ansible.builtin.get_url:
+        url: http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html
+        dest: /tmp/windowspatch.html
+
+    - name: Create a ServiceNow ticket
+      servicenow.itsm.incident:
+        instance:
+          host: "{{ sn_instance }}"
+          username: "{{ sn_username }}"
+          password: "{{ sn_password }}"
+        state: new
+        caller: "ansible"
+        impact: medium
+        urgency: medium
+        short_description: "System Updated: {{ inventory_hostname }}"
+        description: "Full report: http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
+        attachments:
+          - path: "/tmp/windowspatch.html"        
