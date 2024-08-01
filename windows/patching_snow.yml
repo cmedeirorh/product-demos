@@ -18,7 +18,7 @@
         caller: "ansible"
         impact: medium
         urgency: medium
-        short_description: "System Updated: {{ inventory_hostname }}"
+        short_description: "System Updated: {{ vm_name }}"
         description: "Full report: http://{{ hostvars[report_server]['ansible_host'] }}/reports/windowspatch.html"
         attachments:
           - path: "/tmp/windowspatch.html"        
