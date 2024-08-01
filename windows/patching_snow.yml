@@ -5,7 +5,7 @@
   tasks:
     - name: Download Patch Report
       ansible.builtin.get_url:
-        url: http://{{ report_server }}/reports/windowspatch.html
+        url: https://{{ general_report_server }}/reports/windowspatch.html
         dest: /tmp/windowspatch.html
 
     - name: Create a ServiceNow ticket
@@ -19,6 +19,6 @@
         impact: medium
         urgency: medium
         short_description: "System Updated: {{ vm_name }}"
-        description: "Full report: http://{{ report_server }}/reports/windowspatch.html"
+        description: "Full report: https://{{ general_report_server }}/reports/windowspatch.html"
         attachments:
           - path: "/tmp/windowspatch.html"        
