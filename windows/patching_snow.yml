@@ -1,6 +1,6 @@
 ---
 - name: Windows updates
-  hosts: localhost
+  hosts: all
 
   tasks:
     - name: Download Patch Report
