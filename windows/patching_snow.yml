@@ -19,6 +19,6 @@
         impact: medium
         urgency: medium
         short_description: "System Updated: {{ vm_name }}"
-        description: "Full report: https://{{ general_report_server }}/reports/windowspatch.html"
+        description: "Full report: {{ awx_workflow_job_id }}" #https://{{ general_report_server }}/reports/windowspatch.html"
         attachments:
           - path: "/tmp/windowspatch.html"        
