@@ -52,6 +52,7 @@
               - 5986  # WinRM
               - 3389  # RDP
               - 9090  # Cockpit
+              - 8080 # Test app
             cidr_ip: 0.0.0.0/0
           - proto: icmp
             to_port: -1
