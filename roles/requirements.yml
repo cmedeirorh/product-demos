@@ -1,6 +1,6 @@
 ---
 roles:
-  # RHEL 7 compliance roles from ComplianceAsCode tunnel
+  # RHEL 7 compliance roles from ComplianceAsCode
   - name: redhatofficial.rhel7_cis
     version: 0.1.69
   - name: redhatofficial.rhel7_cjis
