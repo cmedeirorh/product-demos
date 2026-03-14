@@ -32,7 +32,6 @@ collections:
     version: ">=2.2.0"
   # cloud
   - name: amazon.aws
-    version: ">=7.5.0"
   # satellite
   - name: redhat.satellite
     version: ">=4.0.0"
