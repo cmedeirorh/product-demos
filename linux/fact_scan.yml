@@ -9,3 +9,6 @@
 
     - name: Get services
       ansible.builtin.service_facts:
+
+    - name: Get all
+      ansible.builtin.gather_facts:
